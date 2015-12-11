@@ -1,0 +1,12 @@
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\4HC3-Milestone3\4HC3-Milestone3\bin\Debug\4HC3-Milestone3.exe.config
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\4HC3-Milestone3\4HC3-Milestone3\bin\Debug\4HC3-Milestone3.exe
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\4HC3-Milestone3\4HC3-Milestone3\bin\Debug\4HC3-Milestone3.pdb
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\4HC3-Milestone3\4HC3-Milestone3\obj\Debug\_4HC3_Milestone3.SignIn.resources
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\4HC3-Milestone3\4HC3-Milestone3\obj\Debug\_4HC3_Milestone3.SignUp.resources
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\4HC3-Milestone3\4HC3-Milestone3\obj\Debug\_4HC3_Milestone3.VIDEORVideo.resources
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\4HC3-Milestone3\4HC3-Milestone3\obj\Debug\_4HC3_Milestone3.VIDEORSearch.resources
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\4HC3-Milestone3\4HC3-Milestone3\obj\Debug\_4HC3_Milestone3.Main.resources
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\4HC3-Milestone3\4HC3-Milestone3\obj\Debug\_4HC3_Milestone3.Properties.Resources.resources
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\4HC3-Milestone3\4HC3-Milestone3\obj\Debug\4HC3-Milestone3.csproj.GenerateResource.Cache
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\4HC3-Milestone3\4HC3-Milestone3\obj\Debug\4HC3-Milestone3.exe
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\4HC3-Milestone3\4HC3-Milestone3\obj\Debug\4HC3-Milestone3.pdb
