@@ -23,7 +23,7 @@ namespace _4HC3_Milestone3
         private Label label1;
         private CheckBox checkBox1;
         private Button btnSignIn;
-        private TextBox textBox2;
+        private TextBox txtPassword;
         private TextBox tbUsername;
         private Label label3;
         private Label label2;
@@ -38,7 +38,7 @@ namespace _4HC3_Milestone3
             this.label1 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.btnSignIn = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.tbUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -77,14 +77,13 @@ namespace _4HC3_Milestone3
             this.btnSignIn.UseVisualStyleBackColor = true;
             this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
-            // textBox2
+            // txtPassword
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.textBox2.Location = new System.Drawing.Point(170, 188);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(233, 30);
-            this.textBox2.TabIndex = 6;
-            this.textBox2.Text = "1q2w3e4r";
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.txtPassword.Location = new System.Drawing.Point(170, 188);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(233, 30);
+            this.txtPassword.TabIndex = 6;
             // 
             // tbUsername
             // 
@@ -93,7 +92,6 @@ namespace _4HC3_Milestone3
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(233, 30);
             this.tbUsername.TabIndex = 7;
-            this.tbUsername.Text = "cruiksam";
             // 
             // label3
             // 
@@ -122,7 +120,7 @@ namespace _4HC3_Milestone3
             this.Controls.Add(this.label1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.btnSignIn);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.tbUsername);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -148,5 +146,6 @@ namespace _4HC3_Milestone3
         {
             _username = tbUsername.Text;
         }
+        
     }
 }

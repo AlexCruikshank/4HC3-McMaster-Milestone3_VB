@@ -10,3 +10,4 @@ C:\Users\Alex\Documents\Visual Studio 2015\Projects\4HC3-Milestone3\4HC3-Milesto
 C:\Users\Alex\Documents\Visual Studio 2015\Projects\4HC3-Milestone3\4HC3-Milestone3\bin\Debug\4HC3-Milestone3.pdb
 C:\Users\Alex\Documents\Visual Studio 2015\Projects\4HC3-Milestone3\4HC3-Milestone3\obj\Debug\4HC3-Milestone3.exe
 C:\Users\Alex\Documents\Visual Studio 2015\Projects\4HC3-Milestone3\4HC3-Milestone3\obj\Debug\4HC3-Milestone3.pdb
+C:\Users\Alex\documents\visual studio 2015\Projects\4HC3-Milestone3\4HC3-Milestone3\obj\Debug\4HC3-Milestone3.csprojResolveAssemblyReference.cache

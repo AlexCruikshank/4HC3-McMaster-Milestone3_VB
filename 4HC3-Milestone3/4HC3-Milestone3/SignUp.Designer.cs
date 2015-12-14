@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.tbUsername = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnSignUp = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtConfirm = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // tbUsername
@@ -48,16 +48,14 @@
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(233, 30);
             this.tbUsername.TabIndex = 0;
-            this.tbUsername.Text = "cruiksam";
             // 
-            // textBox2
+            // txtPassword
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.textBox2.Location = new System.Drawing.Point(159, 261);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(233, 30);
-            this.textBox2.TabIndex = 0;
-            this.textBox2.Text = "1q2w3e4r";
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.txtPassword.Location = new System.Drawing.Point(159, 261);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(233, 30);
+            this.txtPassword.TabIndex = 0;
             // 
             // btnSignUp
             // 
@@ -122,14 +120,13 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "confirm:";
             // 
-            // textBox3
+            // txtConfirm
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.textBox3.Location = new System.Drawing.Point(160, 297);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(233, 30);
-            this.textBox3.TabIndex = 0;
-            this.textBox3.Text = "1q2w3e4r";
+            this.txtConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.txtConfirm.Location = new System.Drawing.Point(160, 297);
+            this.txtConfirm.Name = "txtConfirm";
+            this.txtConfirm.Size = new System.Drawing.Size(233, 30);
+            this.txtConfirm.TabIndex = 0;
             // 
             // label5
             // 
@@ -141,14 +138,13 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "email:";
             // 
-            // textBox4
+            // txtEmail
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.textBox4.Location = new System.Drawing.Point(159, 225);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(233, 30);
-            this.textBox4.TabIndex = 0;
-            this.textBox4.Text = "cruiksam@mcmaster.ca";
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.txtEmail.Location = new System.Drawing.Point(159, 225);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(233, 30);
+            this.txtEmail.TabIndex = 0;
             // 
             // SignUp
             // 
@@ -159,9 +155,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.btnSignUp);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtConfirm);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.tbUsername);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -177,15 +173,15 @@
         #endregion
 
         private System.Windows.Forms.TextBox tbUsername;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnSignUp;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtConfirm;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtEmail;
     }
 }

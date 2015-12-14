@@ -14,10 +14,13 @@ namespace _4HC3_Milestone3
     {
 
         static string _username = "";
+        static string _filter = "";
 
         public VIDEORSearch()
         {
             InitializeComponent();
+            cbFilters.Text = _filter;
+            
         }
 
         private void InitializeComponent()
@@ -179,6 +182,7 @@ namespace _4HC3_Milestone3
             this.cbFilters.Name = "cbFilters";
             this.cbFilters.Size = new System.Drawing.Size(248, 39);
             this.cbFilters.TabIndex = 16;
+            this.cbFilters.SelectedIndexChanged += new System.EventHandler(this.cbFilters_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -612,6 +616,19 @@ namespace _4HC3_Milestone3
                 _username = value;
             }
         }
+
+        public string Filters
+        {
+            get
+            {
+                return _filter;
+            }
+            set
+            {
+                _filter = value;
+            }
+        }
+
         public bool SignedIn
         {
             
@@ -740,6 +757,27 @@ namespace _4HC3_Milestone3
         private void label22_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbFilters_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            {
+                this.Hide();
+                VIDEORSearch objForm = new VIDEORSearch();
+                if (lblUsername.Text != "" && lblUsername.Text != "lblUsername")
+                {
+                    objForm.Username = _username;
+                    objForm.SignedIn = true;
+                }
+                else
+                {
+                    objForm.Username = "";
+                    objForm.SignedIn = false;
+                }
+                objForm.Filters = cbFilters.Text;
+                objForm.Closed += (s, args) => this.Close();
+                objForm.Show();
+            }
         }
     }
 }

@@ -57,6 +57,7 @@ namespace _4HC3_Milestone3
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VIDEORVideo));
             this.lblOtherTime4 = new System.Windows.Forms.Label();
             this.lblOtherTime2 = new System.Windows.Forms.Label();
             this.lblOtherTime3 = new System.Windows.Forms.Label();
@@ -94,6 +95,9 @@ namespace _4HC3_Milestone3
             this.lblMainVideoTitle = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
             this.btnSignOut = new System.Windows.Forms.Button();
+            this.imgDown = new System.Windows.Forms.Label();
+            this.imgUp = new System.Windows.Forms.Label();
+            this.lblVote = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -519,10 +523,40 @@ namespace _4HC3_Milestone3
             this.btnSignOut.UseVisualStyleBackColor = true;
             this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
             // 
+            // imgDown
+            // 
+            this.imgDown.Image = ((System.Drawing.Image)(resources.GetObject("imgDown.Image")));
+            this.imgDown.Location = new System.Drawing.Point(181, 565);
+            this.imgDown.Name = "imgDown";
+            this.imgDown.Size = new System.Drawing.Size(50, 50);
+            this.imgDown.TabIndex = 53;
+            this.imgDown.Click += new System.EventHandler(this.imgDown_Click);
+            // 
+            // imgUp
+            // 
+            this.imgUp.Image = ((System.Drawing.Image)(resources.GetObject("imgUp.Image")));
+            this.imgUp.Location = new System.Drawing.Point(181, 468);
+            this.imgUp.Name = "imgUp";
+            this.imgUp.Size = new System.Drawing.Size(50, 50);
+            this.imgUp.TabIndex = 53;
+            this.imgUp.Click += new System.EventHandler(this.imgUp_Click);
+            // 
+            // lblVote
+            // 
+            this.lblVote.AutoSize = true;
+            this.lblVote.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.lblVote.Location = new System.Drawing.Point(178, 526);
+            this.lblVote.Name = "lblVote";
+            this.lblVote.Size = new System.Drawing.Size(55, 39);
+            this.lblVote.TabIndex = 32;
+            this.lblVote.Text = "10";
+            // 
             // VIDEORVideo
             // 
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1386, 938);
+            this.Controls.Add(this.imgUp);
+            this.Controls.Add(this.imgDown);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -534,6 +568,7 @@ namespace _4HC3_Milestone3
             this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.btnMain);
             this.Controls.Add(this.lblMainVideoTitle);
+            this.Controls.Add(this.lblVote);
             this.Controls.Add(this.lblMainVideoDesc);
             this.Controls.Add(this.btnSignOut);
             this.Name = "VIDEORVideo";
@@ -676,6 +711,26 @@ namespace _4HC3_Milestone3
                 btnSignUp.Visible = false;
             }
             popUp.Close();
+        }
+
+        private Label imgDown;
+        private Label imgUp;
+        private Label lblVote;
+
+        private void imgUp_Click(object sender, EventArgs e)
+        {
+            if (lblUsername.Text != "" && lblUsername.Text != "lblUsername")
+            {
+                lblVote.Text = Convert.ToString(Convert.ToInt32(lblVote.Text) + 1);
+            }
+        }
+
+        private void imgDown_Click(object sender, EventArgs e)
+        {
+            if (lblUsername.Text != "" && lblUsername.Text != "lblUsername")
+            {
+                lblVote.Text = Convert.ToString(Convert.ToInt32(lblVote.Text) - 1);
+            }
         }
     }
 }
