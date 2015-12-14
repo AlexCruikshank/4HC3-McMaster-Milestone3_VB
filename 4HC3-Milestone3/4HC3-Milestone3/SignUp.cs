@@ -12,20 +12,30 @@ namespace _4HC3_Milestone3
 {
     public partial class SignUp : Form
     {
+
+
+        static string _username;
+
         public SignUp()
         {
             InitializeComponent();
         }
 
-
-        private void label1_Click(object sender, EventArgs e)
+        public string Username
         {
-
+            get
+            {
+                return _username;
+            }
+            set
+            {
+                _username = value;
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSignUp_Click(object sender, EventArgs e)
         {
-
+            _username = tbUsername.Text;
         }
     }
 }

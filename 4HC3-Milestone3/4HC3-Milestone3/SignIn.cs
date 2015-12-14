@@ -10,13 +10,21 @@ using System.Windows.Forms;
 
 namespace _4HC3_Milestone3
 {
+    //public class Variables
+    //{
+        
+    //}
+
     public partial class SignIn : Form
     {
+
+        static string _username;
+
         private Label label1;
         private CheckBox checkBox1;
-        private Button button1;
+        private Button btnSignIn;
         private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox tbUsername;
         private Label label3;
         private Label label2;
 
@@ -29,9 +37,9 @@ namespace _4HC3_Milestone3
         {
             this.label1 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSignIn = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -57,15 +65,17 @@ namespace _4HC3_Milestone3
             this.checkBox1.Text = "Terms of Service";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnSignIn
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.button1.Location = new System.Drawing.Point(136, 306);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 59);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Sign In";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSignIn.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.btnSignIn.Location = new System.Drawing.Point(136, 306);
+            this.btnSignIn.Name = "btnSignIn";
+            this.btnSignIn.Size = new System.Drawing.Size(174, 59);
+            this.btnSignIn.TabIndex = 8;
+            this.btnSignIn.Text = "Sign In";
+            this.btnSignIn.UseVisualStyleBackColor = true;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // textBox2
             // 
@@ -76,14 +86,14 @@ namespace _4HC3_Milestone3
             this.textBox2.TabIndex = 6;
             this.textBox2.Text = "1q2w3e4r";
             // 
-            // textBox1
+            // tbUsername
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.textBox1.Location = new System.Drawing.Point(170, 140);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(233, 30);
-            this.textBox1.TabIndex = 7;
-            this.textBox1.Text = "cruiksam";
+            this.tbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.tbUsername.Location = new System.Drawing.Point(170, 140);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Size = new System.Drawing.Size(233, 30);
+            this.tbUsername.TabIndex = 7;
+            this.tbUsername.Text = "cruiksam";
             // 
             // label3
             // 
@@ -111,15 +121,32 @@ namespace _4HC3_Milestone3
             this.ClientSize = new System.Drawing.Size(426, 403);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSignIn);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbUsername);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Name = "SignIn";
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        public string Username
+        {
+            get
+            {
+                return _username;
+            }
+            set
+            {
+                _username = value;
+            }
+        }
+
+        private void btnSignIn_Click(object sender, EventArgs e)
+        {
+            _username = tbUsername.Text;
         }
     }
 }

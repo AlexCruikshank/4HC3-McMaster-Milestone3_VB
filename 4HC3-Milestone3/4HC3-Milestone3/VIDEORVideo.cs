@@ -12,6 +12,44 @@ namespace _4HC3_Milestone3
 {
     public partial class VIDEORVideo : Form
     {
+        static string _username = "";
+
+        public string Username
+        {
+            get
+            {
+                return _username;
+            }
+            set
+            {
+                _username = value;
+            }
+        }
+        public bool SignedIn
+        {
+
+            set
+            {
+                if (value == true)
+                {
+                    lblUsername.Text = _username;
+                    btnSignOut.Visible = true;
+                    lblUsername.Visible = true;
+                    btnSignIn.Visible = false;
+                    btnSignUp.Visible = false;
+                }
+                else if (value == false)
+                {
+                    _username = "";
+                    btnSignOut.Visible = false;
+                    lblUsername.Visible = false;
+                    btnSignIn.Visible = true;
+                    btnSignUp.Visible = true;
+                }
+            }
+        }
+
+
         public VIDEORVideo()
         {
             InitializeComponent();
@@ -29,8 +67,8 @@ namespace _4HC3_Milestone3
             this.lblOtherTitle1 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSignUp = new System.Windows.Forms.Button();
+            this.btnSignIn = new System.Windows.Forms.Button();
             this.btnOtherVids4 = new System.Windows.Forms.Button();
             this.btnOtherVids2 = new System.Windows.Forms.Button();
             this.btnOtherVids3 = new System.Windows.Forms.Button();
@@ -54,6 +92,8 @@ namespace _4HC3_Milestone3
             this.lblMainVideoDesc = new System.Windows.Forms.Label();
             this.lblMainVideoTags = new System.Windows.Forms.Label();
             this.lblMainVideoTitle = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.btnSignOut = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -159,29 +199,29 @@ namespace _4HC3_Milestone3
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // button3
+            // btnSignUp
             // 
-            this.button3.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold);
-            this.button3.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.button3.Location = new System.Drawing.Point(977, 21);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(187, 60);
-            this.button3.TabIndex = 18;
-            this.button3.Text = "Sign Up";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Visible = false;
+            this.btnSignUp.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold);
+            this.btnSignUp.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btnSignUp.Location = new System.Drawing.Point(977, 21);
+            this.btnSignUp.Name = "btnSignUp";
+            this.btnSignUp.Size = new System.Drawing.Size(187, 60);
+            this.btnSignUp.TabIndex = 18;
+            this.btnSignUp.Text = "Sign Up";
+            this.btnSignUp.UseVisualStyleBackColor = true;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
-            // button2
+            // btnSignIn
             // 
-            this.button2.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.button2.Location = new System.Drawing.Point(586, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(187, 60);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Sign Up";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
+            this.btnSignIn.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold);
+            this.btnSignIn.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btnSignIn.Location = new System.Drawing.Point(586, 21);
+            this.btnSignIn.Name = "btnSignIn";
+            this.btnSignIn.Size = new System.Drawing.Size(187, 60);
+            this.btnSignIn.TabIndex = 19;
+            this.btnSignIn.Text = "Sign In";
+            this.btnSignIn.UseVisualStyleBackColor = true;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // btnOtherVids4
             // 
@@ -456,21 +496,46 @@ namespace _4HC3_Milestone3
             this.lblMainVideoTitle.TabIndex = 32;
             this.lblMainVideoTitle.Text = "Video Title";
             // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.lblUsername.Location = new System.Drawing.Point(578, 30);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(243, 46);
+            this.lblUsername.TabIndex = 51;
+            this.lblUsername.Text = "lblUsername";
+            this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btnSignOut
+            // 
+            this.btnSignOut.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold);
+            this.btnSignOut.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btnSignOut.Location = new System.Drawing.Point(964, 21);
+            this.btnSignOut.Name = "btnSignOut";
+            this.btnSignOut.Size = new System.Drawing.Size(222, 60);
+            this.btnSignOut.TabIndex = 52;
+            this.btnSignOut.Text = "Sign Out";
+            this.btnSignOut.UseVisualStyleBackColor = true;
+            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
+            // 
             // VIDEORVideo
             // 
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1386, 938);
+            this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lblMainVideoTags);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnSignUp);
+            this.Controls.Add(this.btnSignIn);
             this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.btnMain);
             this.Controls.Add(this.lblMainVideoTitle);
             this.Controls.Add(this.lblMainVideoDesc);
+            this.Controls.Add(this.btnSignOut);
             this.Name = "VIDEORVideo";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -490,8 +555,8 @@ namespace _4HC3_Milestone3
         private Label lblOtherTitle1;
         private TextBox txtSearch;
         private Button btnSearch;
-        private Button button3;
-        private Button button2;
+        private Button btnSignUp;
+        private Button btnSignIn;
         private Button btnOtherVids4;
         private Button btnOtherVids2;
         private Button btnOtherVids3;
@@ -520,6 +585,16 @@ namespace _4HC3_Milestone3
         {
             this.Hide();
             VIDEORVideo objForm = new VIDEORVideo();
+            if (lblUsername.Text != "")
+            {
+                objForm.Username = _username;
+                objForm.SignedIn = true;
+            }
+            else
+            {
+                objForm.Username = "";
+                objForm.SignedIn = false;
+            }
             objForm.Closed += (s, args) => this.Close();
             objForm.Show();
         }
@@ -527,6 +602,16 @@ namespace _4HC3_Milestone3
         {
             this.Hide();
             Main objForm = new Main();
+            if (lblUsername.Text != "" && lblUsername.Text != "lblUsername")
+            {
+                objForm.Username = _username;
+                objForm.SignedIn = true;
+            }
+            else
+            {
+                objForm.Username = "";
+                objForm.SignedIn = false;
+            }
             objForm.Closed += (s, args) => this.Close();
             objForm.Show();
         }
@@ -535,8 +620,62 @@ namespace _4HC3_Milestone3
         {
             this.Hide();
             VIDEORSearch objForm = new VIDEORSearch();
+            if (lblUsername.Text != "" && lblUsername.Text!= "lblUsername")
+            {
+                objForm.Username = _username;
+                objForm.SignedIn = true;
+            }
+            else
+            {
+                objForm.Username = "";
+                objForm.SignedIn = false;
+            }
             objForm.Closed += (s, args) => this.Close();
             objForm.Show();
+        }
+
+        private Label lblUsername;
+        private Button btnSignOut;
+
+        private void btnSignIn_Click(object sender, EventArgs e)
+        {
+            SignIn popIn = new SignIn();
+            if (popIn.ShowDialog() == DialogResult.OK)
+            {
+                _username = popIn.Username;
+                lblUsername.Text = _username;
+                btnSignOut.Visible = true;
+                lblUsername.Visible = true;
+                btnSignIn.Visible = false;
+                btnSignUp.Visible = false;
+            }
+
+            popIn.Close();
+        }
+
+        private void btnSignOut_Click(object sender, EventArgs e)
+        {
+            _username = "";
+            lblUsername.Text = "";
+            btnSignOut.Visible = false;
+            lblUsername.Visible = false;
+            btnSignIn.Visible = true;
+            btnSignUp.Visible = true;
+        }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            SignUp popUp = new SignUp();
+            if (popUp.ShowDialog() == DialogResult.OK)
+            {
+                _username = popUp.Username;
+                lblUsername.Text = _username;
+                btnSignOut.Visible = true;
+                lblUsername.Visible = true;
+                btnSignIn.Visible = false;
+                btnSignUp.Visible = false;
+            }
+            popUp.Close();
         }
     }
 }

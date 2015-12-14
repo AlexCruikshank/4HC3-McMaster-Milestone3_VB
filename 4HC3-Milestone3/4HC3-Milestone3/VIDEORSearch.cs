@@ -12,6 +12,9 @@ namespace _4HC3_Milestone3
 {
     public partial class VIDEORSearch : Form
     {
+
+        static string _username = "";
+
         public VIDEORSearch()
         {
             InitializeComponent();
@@ -21,8 +24,8 @@ namespace _4HC3_Milestone3
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSignUp = new System.Windows.Forms.Button();
+            this.btnSignIn = new System.Windows.Forms.Button();
             this.btnVid1 = new System.Windows.Forms.Button();
             this.btnMain = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -56,7 +59,10 @@ namespace _4HC3_Milestone3
             this.lblPageCount2 = new System.Windows.Forms.Label();
             this.lblUnknownPage = new System.Windows.Forms.Label();
             this.lblLastPage = new System.Windows.Forms.Label();
-            this.lblFirstPage = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.btnSignOut = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -80,29 +86,29 @@ namespace _4HC3_Milestone3
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // button3
+            // btnSignUp
             // 
-            this.button3.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold);
-            this.button3.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.button3.Location = new System.Drawing.Point(963, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(187, 60);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Sign Up";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Visible = false;
+            this.btnSignUp.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold);
+            this.btnSignUp.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btnSignUp.Location = new System.Drawing.Point(963, 12);
+            this.btnSignUp.Name = "btnSignUp";
+            this.btnSignUp.Size = new System.Drawing.Size(187, 60);
+            this.btnSignUp.TabIndex = 3;
+            this.btnSignUp.Text = "Sign Up";
+            this.btnSignUp.UseVisualStyleBackColor = true;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
-            // button2
+            // btnSignIn
             // 
-            this.button2.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.button2.Location = new System.Drawing.Point(572, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(187, 60);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Sign Up";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
+            this.btnSignIn.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold);
+            this.btnSignIn.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btnSignIn.Location = new System.Drawing.Point(572, 12);
+            this.btnSignIn.Name = "btnSignIn";
+            this.btnSignIn.Size = new System.Drawing.Size(187, 60);
+            this.btnSignIn.TabIndex = 4;
+            this.btnSignIn.Text = "Sign In";
+            this.btnSignIn.UseVisualStyleBackColor = true;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // btnVid1
             // 
@@ -171,7 +177,7 @@ namespace _4HC3_Milestone3
             "Tags"});
             this.cbFilters.Location = new System.Drawing.Point(1126, 150);
             this.cbFilters.Name = "cbFilters";
-            this.cbFilters.Size = new System.Drawing.Size(174, 39);
+            this.cbFilters.Size = new System.Drawing.Size(248, 39);
             this.cbFilters.TabIndex = 16;
             // 
             // label4
@@ -412,29 +418,31 @@ namespace _4HC3_Milestone3
             // 
             this.lblPageCount1.AutoSize = true;
             this.lblPageCount1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.lblPageCount1.Location = new System.Drawing.Point(661, 657);
+            this.lblPageCount1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblPageCount1.Location = new System.Drawing.Point(674, 647);
             this.lblPageCount1.Name = "lblPageCount1";
-            this.lblPageCount1.Size = new System.Drawing.Size(37, 31);
+            this.lblPageCount1.Size = new System.Drawing.Size(29, 31);
             this.lblPageCount1.TabIndex = 15;
-            this.lblPageCount1.Text = "1,";
+            this.lblPageCount1.Text = "1";
             this.lblPageCount1.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // lblPageCount2
             // 
             this.lblPageCount2.AutoSize = true;
             this.lblPageCount2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.lblPageCount2.Location = new System.Drawing.Point(692, 657);
+            this.lblPageCount2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblPageCount2.Location = new System.Drawing.Point(705, 647);
             this.lblPageCount2.Name = "lblPageCount2";
-            this.lblPageCount2.Size = new System.Drawing.Size(37, 31);
+            this.lblPageCount2.Size = new System.Drawing.Size(29, 31);
             this.lblPageCount2.TabIndex = 15;
-            this.lblPageCount2.Text = "2,";
+            this.lblPageCount2.Text = "2";
             this.lblPageCount2.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // lblUnknownPage
             // 
             this.lblUnknownPage.AutoSize = true;
             this.lblUnknownPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.lblUnknownPage.Location = new System.Drawing.Point(721, 657);
+            this.lblUnknownPage.Location = new System.Drawing.Point(734, 647);
             this.lblUnknownPage.Name = "lblUnknownPage";
             this.lblUnknownPage.Size = new System.Drawing.Size(38, 31);
             this.lblUnknownPage.TabIndex = 15;
@@ -444,28 +452,65 @@ namespace _4HC3_Milestone3
             // 
             this.lblLastPage.AutoSize = true;
             this.lblLastPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.lblLastPage.Location = new System.Drawing.Point(750, 657);
+            this.lblLastPage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblLastPage.Location = new System.Drawing.Point(763, 647);
             this.lblLastPage.Name = "lblLastPage";
-            this.lblLastPage.Size = new System.Drawing.Size(136, 31);
+            this.lblLastPage.Size = new System.Drawing.Size(44, 31);
             this.lblLastPage.TabIndex = 15;
-            this.lblLastPage.Text = "Last Page";
+            this.lblLastPage.Text = "10";
             this.lblLastPage.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // lblFirstPage
+            // lblUsername
             // 
-            this.lblFirstPage.AutoSize = true;
-            this.lblFirstPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.lblFirstPage.Location = new System.Drawing.Point(519, 657);
-            this.lblFirstPage.Name = "lblFirstPage";
-            this.lblFirstPage.Size = new System.Drawing.Size(138, 31);
-            this.lblFirstPage.TabIndex = 15;
-            this.lblFirstPage.Text = "First Page";
-            this.lblFirstPage.Click += new System.EventHandler(this.btnSearch_Click);
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.lblUsername.Location = new System.Drawing.Point(564, 21);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(243, 46);
+            this.lblUsername.TabIndex = 17;
+            this.lblUsername.Text = "lblUsername";
+            this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btnSignOut
+            // 
+            this.btnSignOut.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold);
+            this.btnSignOut.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btnSignOut.Location = new System.Drawing.Point(951, 12);
+            this.btnSignOut.Name = "btnSignOut";
+            this.btnSignOut.Size = new System.Drawing.Size(222, 60);
+            this.btnSignOut.TabIndex = 18;
+            this.btnSignOut.Text = "Sign Out";
+            this.btnSignOut.UseVisualStyleBackColor = true;
+            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.label2.Location = new System.Drawing.Point(691, 647);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(16, 34);
+            this.label2.TabIndex = 15;
+            this.label2.Text = ",";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label22
+            // 
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.label22.Location = new System.Drawing.Point(727, 647);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(16, 34);
+            this.label22.TabIndex = 15;
+            this.label22.Text = ",";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label22.Click += new System.EventHandler(this.label22_Click);
             // 
             // VIDEORSearch
             // 
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1386, 719);
+            this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.cbFilters);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label21);
@@ -480,8 +525,9 @@ namespace _4HC3_Milestone3
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblUnknownPage);
-            this.Controls.Add(this.lblFirstPage);
             this.Controls.Add(this.lblLastPage);
             this.Controls.Add(this.lblPageCount2);
             this.Controls.Add(this.lblPageCount1);
@@ -494,8 +540,8 @@ namespace _4HC3_Milestone3
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnSignUp);
+            this.Controls.Add(this.btnSignIn);
             this.Controls.Add(this.btnVid6);
             this.Controls.Add(this.btnVid4);
             this.Controls.Add(this.btnVid2);
@@ -504,6 +550,7 @@ namespace _4HC3_Milestone3
             this.Controls.Add(this.btnVid1);
             this.Controls.Add(this.btnMain);
             this.Controls.Add(this.lblResults);
+            this.Controls.Add(this.btnSignOut);
             this.Name = "VIDEORSearch";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -512,8 +559,8 @@ namespace _4HC3_Milestone3
 
         private TextBox textBox1;
         private Button btnSearch;
-        private Button button3;
-        private Button button2;
+        private Button btnSignUp;
+        private Button btnSignIn;
         private Button btnVid1;
         private Button btnMain;
         private Label label1;
@@ -553,12 +600,56 @@ namespace _4HC3_Milestone3
         private Label lblPageCount2;
         private Label lblUnknownPage;
         private Label lblLastPage;
-        private Label lblFirstPage;
+
+        public string Username
+        {
+            get
+            {
+                return _username;
+            }
+            set
+            {
+                _username = value;
+            }
+        }
+        public bool SignedIn
+        {
+            
+            set
+            {
+                if (value == true)
+                {
+                    lblUsername.Text = _username;
+                    btnSignOut.Visible = true;
+                    lblUsername.Visible = true;
+                    btnSignIn.Visible = false;
+                    btnSignUp.Visible = false;
+                }
+                else if (value == false)
+                {
+                    _username = "";
+                    btnSignOut.Visible = false;
+                    lblUsername.Visible = false;
+                    btnSignIn.Visible = true;
+                    btnSignUp.Visible = true;
+                }
+            }
+        }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             this.Hide();
             VIDEORSearch objForm = new VIDEORSearch();
+            if (lblUsername.Text != "" && lblUsername.Text != "lblUsername")
+            {
+                objForm.Username = _username;
+                objForm.SignedIn = true;
+            }
+            else
+            {
+                objForm.Username = "";
+                objForm.SignedIn = false;
+            }
             objForm.Closed += (s, args) => this.Close();
             objForm.Show();
         }
@@ -567,6 +658,16 @@ namespace _4HC3_Milestone3
         {
             this.Hide();
             Main objForm = new Main();
+            if (lblUsername.Text != "" && lblUsername.Text != "lblUsername")
+            {
+                objForm.Username = _username;
+                objForm.SignedIn = true;
+            }
+            else
+            {
+                objForm.Username = "";
+                objForm.SignedIn = false;
+            }
             objForm.Closed += (s, args) => this.Close();
             objForm.Show();
         }
@@ -575,8 +676,70 @@ namespace _4HC3_Milestone3
         {
             this.Hide();
             VIDEORVideo objForm = new VIDEORVideo();
+            if (lblUsername.Text != "" && lblUsername.Text != "lblUsername")
+            {
+                objForm.Username = _username;
+                objForm.SignedIn = true;
+            }
+            else
+            {
+                objForm.Username = "";
+                objForm.SignedIn = false;
+            }
             objForm.Closed += (s, args) => this.Close();
             objForm.Show();
+        }
+
+        private Label lblUsername;
+        private Button btnSignOut;
+
+        private void btnSignOut_Click(object sender, EventArgs e)
+        {
+            _username = "";
+            lblUsername.Text = "";
+            btnSignOut.Visible = false;
+            lblUsername.Visible = false;
+            btnSignIn.Visible = true;
+            btnSignUp.Visible = true;
+        }
+
+        private void btnSignIn_Click(object sender, EventArgs e)
+        {
+            SignIn popIn = new SignIn();
+            if (popIn.ShowDialog() == DialogResult.OK)
+            {
+                _username = popIn.Username;
+                lblUsername.Text = _username;
+                btnSignOut.Visible = true;
+                lblUsername.Visible = true;
+                btnSignIn.Visible = false;
+                btnSignUp.Visible = false;
+            }
+
+            popIn.Close();
+        }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            SignUp popUp = new SignUp();
+            if (popUp.ShowDialog() == DialogResult.OK)
+            {
+                _username = popUp.Username;
+                lblUsername.Text = _username;
+                btnSignOut.Visible = true;
+                lblUsername.Visible = true;
+                btnSignIn.Visible = false;
+                btnSignUp.Visible = false;
+            }
+            popUp.Close();
+        }
+
+        private Label label2;
+        private Label label22;
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

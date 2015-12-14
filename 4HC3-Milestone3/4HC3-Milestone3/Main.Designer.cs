@@ -41,6 +41,8 @@
             this.btnSpiritual = new System.Windows.Forms.Button();
             this.btnSports = new System.Windows.Forms.Button();
             this.btnTechnology = new System.Windows.Forms.Button();
+            this.btnSignOut = new System.Windows.Forms.Button();
+            this.lblUsername = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnVIDEOR
@@ -196,12 +198,36 @@
             this.btnTechnology.UseVisualStyleBackColor = true;
             this.btnTechnology.Click += new System.EventHandler(this.btnCategories_Click);
             // 
+            // btnSignOut
+            // 
+            this.btnSignOut.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold);
+            this.btnSignOut.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btnSignOut.Location = new System.Drawing.Point(774, 49);
+            this.btnSignOut.Name = "btnSignOut";
+            this.btnSignOut.Size = new System.Drawing.Size(222, 60);
+            this.btnSignOut.TabIndex = 0;
+            this.btnSignOut.Text = "Sign Out";
+            this.btnSignOut.UseVisualStyleBackColor = true;
+            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.lblUsername.Location = new System.Drawing.Point(420, 58);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(243, 46);
+            this.lblUsername.TabIndex = 2;
+            this.lblUsername.Text = "lblUsername";
+            this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1386, 719);
+            this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnSignUp);
@@ -215,6 +241,7 @@
             this.Controls.Add(this.btnMusicVideos);
             this.Controls.Add(this.btnMovies);
             this.Controls.Add(this.btnVIDEOR);
+            this.Controls.Add(this.btnSignOut);
             this.Name = "Main";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -237,6 +264,8 @@
         private System.Windows.Forms.Button btnSpiritual;
         private System.Windows.Forms.Button btnSports;
         private System.Windows.Forms.Button btnTechnology;
+        private System.Windows.Forms.Button btnSignOut;
+        private System.Windows.Forms.Label lblUsername;
     }
 }
 
