@@ -53,6 +53,9 @@ namespace _4HC3_Milestone3
         public VIDEORVideo()
         {
             InitializeComponent();
+            lblDownVoteRed.Visible = false;
+            lblUpVoteRed.Visible = false;
+            lblSignInMessage.Visible = false;
         }
 
         private void InitializeComponent()
@@ -98,6 +101,9 @@ namespace _4HC3_Milestone3
             this.imgDown = new System.Windows.Forms.Label();
             this.imgUp = new System.Windows.Forms.Label();
             this.lblVote = new System.Windows.Forms.Label();
+            this.lblSignInMessage = new System.Windows.Forms.Label();
+            this.lblUpVoteRed = new System.Windows.Forms.Label();
+            this.lblDownVoteRed = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -190,16 +196,17 @@ namespace _4HC3_Milestone3
             this.txtSearch.Size = new System.Drawing.Size(708, 38);
             this.txtSearch.TabIndex = 27;
             this.txtSearch.Text = "Look for videos here...";
+            this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
             // 
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold);
             this.btnSearch.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btnSearch.Location = new System.Drawing.Point(1267, 91);
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.Location = new System.Drawing.Point(1267, 93);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(47, 57);
+            this.btnSearch.Size = new System.Drawing.Size(53, 52);
             this.btnSearch.TabIndex = 17;
-            this.btnSearch.Text = "?";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -551,11 +558,43 @@ namespace _4HC3_Milestone3
             this.lblVote.TabIndex = 32;
             this.lblVote.Text = "10";
             // 
+            // lblSignInMessage
+            // 
+            this.lblSignInMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.lblSignInMessage.ForeColor = System.Drawing.Color.Red;
+            this.lblSignInMessage.Location = new System.Drawing.Point(41, 297);
+            this.lblSignInMessage.Name = "lblSignInMessage";
+            this.lblSignInMessage.Size = new System.Drawing.Size(179, 171);
+            this.lblSignInMessage.TabIndex = 32;
+            this.lblSignInMessage.Text = "Please Sign In or Sign Up to Vote";
+            // 
+            // lblUpVoteRed
+            // 
+            this.lblUpVoteRed.BackColor = System.Drawing.Color.Red;
+            this.lblUpVoteRed.Image = ((System.Drawing.Image)(resources.GetObject("lblUpVoteRed.Image")));
+            this.lblUpVoteRed.Location = new System.Drawing.Point(181, 468);
+            this.lblUpVoteRed.Name = "lblUpVoteRed";
+            this.lblUpVoteRed.Size = new System.Drawing.Size(50, 50);
+            this.lblUpVoteRed.TabIndex = 53;
+            this.lblUpVoteRed.Click += new System.EventHandler(this.imgUp_Click);
+            // 
+            // lblDownVoteRed
+            // 
+            this.lblDownVoteRed.BackColor = System.Drawing.Color.Red;
+            this.lblDownVoteRed.Image = ((System.Drawing.Image)(resources.GetObject("lblDownVoteRed.Image")));
+            this.lblDownVoteRed.Location = new System.Drawing.Point(181, 565);
+            this.lblDownVoteRed.Name = "lblDownVoteRed";
+            this.lblDownVoteRed.Size = new System.Drawing.Size(50, 50);
+            this.lblDownVoteRed.TabIndex = 53;
+            this.lblDownVoteRed.Click += new System.EventHandler(this.imgDown_Click);
+            // 
             // VIDEORVideo
             // 
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1386, 938);
+            this.Controls.Add(this.lblUpVoteRed);
             this.Controls.Add(this.imgUp);
+            this.Controls.Add(this.lblDownVoteRed);
             this.Controls.Add(this.imgDown);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.groupBox2);
@@ -567,6 +606,7 @@ namespace _4HC3_Milestone3
             this.Controls.Add(this.btnSignIn);
             this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.btnMain);
+            this.Controls.Add(this.lblSignInMessage);
             this.Controls.Add(this.lblMainVideoTitle);
             this.Controls.Add(this.lblVote);
             this.Controls.Add(this.lblMainVideoDesc);
@@ -683,6 +723,9 @@ namespace _4HC3_Milestone3
                 lblUsername.Visible = true;
                 btnSignIn.Visible = false;
                 btnSignUp.Visible = false;
+                lblDownVoteRed.Visible = false;
+                lblUpVoteRed.Visible = false;
+                lblSignInMessage.Visible = false;
             }
 
             popIn.Close();
@@ -709,6 +752,9 @@ namespace _4HC3_Milestone3
                 lblUsername.Visible = true;
                 btnSignIn.Visible = false;
                 btnSignUp.Visible = false;
+                lblDownVoteRed.Visible = false;
+                lblUpVoteRed.Visible = false;
+                lblSignInMessage.Visible = false;
             }
             popUp.Close();
         }
@@ -723,6 +769,13 @@ namespace _4HC3_Milestone3
             {
                 lblVote.Text = Convert.ToString(Convert.ToInt32(lblVote.Text) + 1);
             }
+            else
+            {
+
+                lblDownVoteRed.Visible = false;
+                lblUpVoteRed.Visible = true;
+                lblSignInMessage.Visible = true;
+            }
         }
 
         private void imgDown_Click(object sender, EventArgs e)
@@ -730,7 +783,22 @@ namespace _4HC3_Milestone3
             if (lblUsername.Text != "" && lblUsername.Text != "lblUsername")
             {
                 lblVote.Text = Convert.ToString(Convert.ToInt32(lblVote.Text) - 1);
+            }else
+            {
+
+                lblDownVoteRed.Visible = true;
+                lblUpVoteRed.Visible = false;
+                lblSignInMessage.Visible = true;
             }
+        }
+
+        private Label lblSignInMessage;
+        private Label lblUpVoteRed;
+        private Label lblDownVoteRed;
+
+        private void txtSearch_Click(object sender, EventArgs e)
+        {
+            txtSearch.Text = "";
         }
     }
 }

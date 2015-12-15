@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.btnVIDEOR = new System.Windows.Forms.Button();
             this.btnSignIn = new System.Windows.Forms.Button();
             this.btnSignUp = new System.Windows.Forms.Button();
@@ -94,11 +95,11 @@
             // 
             this.btnSearch.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold);
             this.btnSearch.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btnSearch.Location = new System.Drawing.Point(1189, 309);
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.Location = new System.Drawing.Point(1188, 312);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(47, 57);
+            this.btnSearch.Size = new System.Drawing.Size(51, 52);
             this.btnSearch.TabIndex = 0;
-            this.btnSearch.Text = "?";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 

@@ -25,7 +25,8 @@ namespace _4HC3_Milestone3
 
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VIDEORSearch));
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnSignUp = new System.Windows.Forms.Button();
             this.btnSignIn = new System.Windows.Forms.Button();
@@ -68,24 +69,25 @@ namespace _4HC3_Milestone3
             this.label22 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.textBox1.Location = new System.Drawing.Point(537, 92);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(708, 38);
-            this.textBox1.TabIndex = 14;
-            this.textBox1.Text = "Look for videos here...";
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.txtSearch.Location = new System.Drawing.Point(537, 92);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(708, 38);
+            this.txtSearch.TabIndex = 14;
+            this.txtSearch.Text = "Look for videos here...";
+            this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
             // 
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold);
             this.btnSearch.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btnSearch.Location = new System.Drawing.Point(1253, 82);
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.Location = new System.Drawing.Point(1252, 85);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(47, 57);
+            this.btnSearch.Size = new System.Drawing.Size(51, 50);
             this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "?";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -508,7 +510,6 @@ namespace _4HC3_Milestone3
             this.label22.TabIndex = 15;
             this.label22.Text = ",";
             this.label22.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label22.Click += new System.EventHandler(this.label22_Click);
             // 
             // VIDEORSearch
             // 
@@ -542,7 +543,7 @@ namespace _4HC3_Milestone3
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.btnSignIn);
@@ -561,7 +562,7 @@ namespace _4HC3_Milestone3
 
         }
 
-        private TextBox textBox1;
+        private TextBox txtSearch;
         private Button btnSearch;
         private Button btnSignUp;
         private Button btnSignIn;
@@ -626,6 +627,7 @@ namespace _4HC3_Milestone3
             set
             {
                 _filter = value;
+                cbFilters.Text = _filter;
             }
         }
 
@@ -754,14 +756,12 @@ namespace _4HC3_Milestone3
         private Label label2;
         private Label label22;
 
-        private void label22_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void cbFilters_SelectedIndexChanged(object sender, EventArgs e)
         {
             {
+                if(cbFilters.Text != _filter)
+                    {
+
                 this.Hide();
                 VIDEORSearch objForm = new VIDEORSearch();
                 if (lblUsername.Text != "" && lblUsername.Text != "lblUsername")
@@ -777,7 +777,13 @@ namespace _4HC3_Milestone3
                 objForm.Filters = cbFilters.Text;
                 objForm.Closed += (s, args) => this.Close();
                 objForm.Show();
+                }
             }
+        }
+
+        private void txtSearch_Click(object sender, EventArgs e)
+        {
+            txtSearch.Text = "";
         }
     }
 }

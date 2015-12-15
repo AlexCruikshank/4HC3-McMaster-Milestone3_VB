@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbUsername = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnSignUp = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -39,15 +39,18 @@
             this.txtConfirm = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblUsernameBlank = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // tbUsername
+            // txtUsername
             // 
-            this.tbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.tbUsername.Location = new System.Drawing.Point(159, 158);
-            this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(233, 30);
-            this.tbUsername.TabIndex = 0;
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.txtUsername.Location = new System.Drawing.Point(159, 158);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(233, 30);
+            this.txtUsername.TabIndex = 0;
+            this.txtUsername.Text = "cruiksam";
+            this.txtUsername.Click += new System.EventHandler(this.txtUsername_Click);
             // 
             // txtPassword
             // 
@@ -56,10 +59,12 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(233, 30);
             this.txtPassword.TabIndex = 0;
+            this.txtPassword.Text = "1q2w3e4r";
+            this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
             // 
             // btnSignUp
             // 
-            this.btnSignUp.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSignUp.DialogResult = System.Windows.Forms.DialogResult.Retry;
             this.btnSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
             this.btnSignUp.Location = new System.Drawing.Point(107, 403);
             this.btnSignUp.Name = "btnSignUp";
@@ -127,6 +132,8 @@
             this.txtConfirm.Name = "txtConfirm";
             this.txtConfirm.Size = new System.Drawing.Size(233, 30);
             this.txtConfirm.TabIndex = 0;
+            this.txtConfirm.Text = "1q2w3e4r";
+            this.txtConfirm.Click += new System.EventHandler(this.txtConfirm_Click);
             // 
             // label5
             // 
@@ -145,6 +152,19 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(233, 30);
             this.txtEmail.TabIndex = 0;
+            this.txtEmail.Text = "cruiksam@mcmaster.ca";
+            this.txtEmail.Click += new System.EventHandler(this.txtEmail_Click);
+            // 
+            // lblUsernameBlank
+            // 
+            this.lblUsernameBlank.AutoSize = true;
+            this.lblUsernameBlank.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.lblUsernameBlank.ForeColor = System.Drawing.Color.Red;
+            this.lblUsernameBlank.Location = new System.Drawing.Point(78, 124);
+            this.lblUsernameBlank.Name = "lblUsernameBlank";
+            this.lblUsernameBlank.Size = new System.Drawing.Size(315, 31);
+            this.lblUsernameBlank.TabIndex = 3;
+            this.lblUsernameBlank.Text = "Please enter a username";
             // 
             // SignUp
             // 
@@ -158,10 +178,11 @@
             this.Controls.Add(this.txtConfirm);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.tbUsername);
+            this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblUsernameBlank);
             this.Controls.Add(this.label2);
             this.Name = "SignUp";
             this.Text = "SignIn";
@@ -172,7 +193,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox tbUsername;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnSignUp;
         private System.Windows.Forms.CheckBox checkBox1;
@@ -183,5 +204,6 @@
         private System.Windows.Forms.TextBox txtConfirm;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label lblUsernameBlank;
     }
 }

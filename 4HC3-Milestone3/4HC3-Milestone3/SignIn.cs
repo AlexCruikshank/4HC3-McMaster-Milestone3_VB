@@ -24,13 +24,14 @@ namespace _4HC3_Milestone3
         private CheckBox checkBox1;
         private Button btnSignIn;
         private TextBox txtPassword;
-        private TextBox tbUsername;
+        private TextBox txtUsername;
         private Label label3;
         private Label label2;
 
         public SignIn()
         {
             InitializeComponent();
+            lblUsernameBlank.Visible = false;
         }
 
         private void InitializeComponent()
@@ -39,9 +40,10 @@ namespace _4HC3_Milestone3
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.btnSignIn = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.tbUsername = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblUsernameBlank = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -84,14 +86,18 @@ namespace _4HC3_Milestone3
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(233, 30);
             this.txtPassword.TabIndex = 6;
+            this.txtPassword.Text = "1q2w3e4r";
+            this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
             // 
-            // tbUsername
+            // txtUsername
             // 
-            this.tbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.tbUsername.Location = new System.Drawing.Point(170, 140);
-            this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(233, 30);
-            this.tbUsername.TabIndex = 7;
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.txtUsername.Location = new System.Drawing.Point(170, 140);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(233, 30);
+            this.txtUsername.TabIndex = 7;
+            this.txtUsername.Text = "cruiksam";
+            this.txtUsername.Click += new System.EventHandler(this.txtUsername_Click);
             // 
             // label3
             // 
@@ -113,15 +119,27 @@ namespace _4HC3_Milestone3
             this.label2.TabIndex = 14;
             this.label2.Text = "username:";
             // 
+            // lblUsernameBlank
+            // 
+            this.lblUsernameBlank.AutoSize = true;
+            this.lblUsernameBlank.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.lblUsernameBlank.ForeColor = System.Drawing.Color.Red;
+            this.lblUsernameBlank.Location = new System.Drawing.Point(94, 106);
+            this.lblUsernameBlank.Name = "lblUsernameBlank";
+            this.lblUsernameBlank.Size = new System.Drawing.Size(315, 31);
+            this.lblUsernameBlank.TabIndex = 15;
+            this.lblUsernameBlank.Text = "Please enter a username";
+            // 
             // SignIn
             // 
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(426, 403);
+            this.Controls.Add(this.lblUsernameBlank);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.btnSignIn);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.tbUsername);
+            this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Name = "SignIn";
@@ -144,8 +162,30 @@ namespace _4HC3_Milestone3
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-            _username = tbUsername.Text;
+            if (txtUsername.Text != "")
+            {
+                DialogResult = DialogResult.OK;
+                _username = txtUsername.Text;
+                lblUsernameBlank.Visible = false;
+            }
+            else
+            {
+
+                DialogResult = DialogResult.None;
+                lblUsernameBlank.Visible = true;
+            }
         }
-        
+
+        private Label lblUsernameBlank;
+
+        private void txtUsername_Click(object sender, EventArgs e)
+        {
+            txtUsername.Text = "";
+        }
+
+        private void txtPassword_Click(object sender, EventArgs e)
+        {
+            txtPassword.Text = "";
+        }
     }
 }

@@ -19,6 +19,7 @@ namespace _4HC3_Milestone3
         public SignUp()
         {
             InitializeComponent();
+            lblUsernameBlank.Visible = false;
         }
 
         public string Username
@@ -35,7 +36,38 @@ namespace _4HC3_Milestone3
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            _username = tbUsername.Text;
+            if (txtUsername.Text != "")
+            {
+                DialogResult = DialogResult.OK;
+                _username = txtUsername.Text;
+                lblUsernameBlank.Visible = false;
+            }
+            else
+            {
+
+                DialogResult = DialogResult.None;
+                lblUsernameBlank.Visible = true;
+            }
+        }
+
+        private void txtConfirm_Click(object sender, EventArgs e)
+        {
+            txtConfirm.Text = "";
+        }
+
+        private void txtPassword_Click(object sender, EventArgs e)
+        {
+            txtPassword.Text = "";
+        }
+
+        private void txtEmail_Click(object sender, EventArgs e)
+        {
+            txtEmail.Text = "";
+        }
+
+        private void txtUsername_Click(object sender, EventArgs e)
+        {
+            txtUsername.Text = "";
         }
     }
 }
